@@ -5,11 +5,9 @@ def verifyInput(daftar_angka):
     # input_terpisah adalah setiap angka (tanpa spasi) dalam daftar angka yang telah dipisah
     # berdasarkan koma JIKA angka tersebut setelah dihilangkan spasi bukan berisi kosong
     input_terpisah = [angka.replace(' ', '') for angka in daftar_angka.split(',') if angka.replace(' ', '') != '' ]
-    print(input_terpisah)
 
     # Cek jika input terdapat bukan angka integer atau float
     for angka in input_terpisah:
-        print(angka)
         if not re.fullmatch(r'^-?(\d+(\.\d*)?|\.\d+)$', angka):
             return False, None
 
@@ -57,5 +55,5 @@ if __name__ == '__main__':
     print("Jumlah-angka: " + jumlahAngka(float_list))
 
     genap_count, ganjil_count = angkaGanjilGenap(float_list)
-    print("Angka Genap: " + genap_count)
-    print("Angka Ganjil: " + ganjil_count)
+    print("Angka Genap: " + str(genap_count))
+    print("Angka Ganjil: " + str(ganjil_count))
